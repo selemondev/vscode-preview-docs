@@ -10,12 +10,6 @@ interface LanguageFrameworkDocs {
 export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
     Vue: [
         {
-            label: 'Vue',
-            docUrl: 'https://vuejs.org/guide/introduction',
-            logo: 'https://api.iconify.design/logos:vue.svg?color=%2314b817'
-        },
-
-        {
             label: 'Nuxt',
             docUrl: 'https://nuxt.com/docs/getting-started/installation',
             logo: 'https://api.iconify.design/logos:nuxt-icon.svg'
@@ -49,6 +43,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             label: 'UnoCss',
             docUrl: 'https://unocss.dev/guide/',
             logo: 'https://api.iconify.design/vscode-icons:file-type-unocss.svg'
+        },
+
+        {
+            label: 'Radix Vue',
+            docUrl: 'https://www.radix-vue.com/overview/getting-started',
+            logo: "https://api.iconify.design/simple-icons:radixui.svg"
         },
 
         {
@@ -110,12 +110,6 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             label: 'Vue Test Utils',
             docUrl: 'https://test-utils.vuejs.org/guide/',
             logo: 'https://api.iconify.design/logos:vue.svg?color=%2314b817'
-        },
-
-        {
-            label: 'Vitest',
-            docUrl: 'https://vitest.dev/guide/',
-            logo: 'https://api.iconify.design/logos:vitest.svg'
         }
     ],
     React: [
@@ -175,6 +169,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         },
 
         {
+            label: 'Radix UI',
+            docUrl: 'https://www.radix-ui.com/themes/docs/overview/getting-started',
+            logo: "https://api.iconify.design/simple-icons:radixui.svg"
+        },
+
+        {
             label: 'Shadcn React',
             docUrl: 'https://ui.shadcn.com/docs',
             logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg'
@@ -227,12 +227,53 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             label: 'React Testing Library',
             docUrl: 'https://testing-library.com/docs/react-testing-library/intro',
             logo: 'https://api.iconify.design/openmoji:octopus.svg'
+        }
+    ],
+
+    Svelte: [
+        {
+            label: 'Svelte',
+            docUrl: 'https://svelte.dev/',
+            logo: 'https://api.iconify.design/logos:svelte-icon.svg'
+        },
+        {
+            label: 'SvelteKit',
+            docUrl: 'https://kit.svelte.dev/',
+            logo: 'https://api.iconify.design/logos:svelte-icon.svg'
         },
 
         {
-            label: 'Vitest',
-            docUrl: 'https://vitest.dev/guide/',
-            logo: 'https://api.iconify.design/logos:vitest.svg'
+            label: 'Shadcn Svelte',
+            docUrl: 'https://www.shadcn-svelte.com/docs',
+            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg'
+        },
+        {
+            label: 'Melt UI',
+            docUrl: 'https://melt-ui.com/docs/introduction',
+            logo: 'https://api.iconify.design/streamline:food-ice-cream-1-cook-frozen-bite-popsicle-cream-ice-cooking-nutrition-freezer-cold-food.svg'
+        },
+        {
+            label: 'TailwindCss',
+            docUrl: 'https://tailwindcss.com/docs/installation',
+            logo: 'https://api.iconify.design/devicon:tailwindcss.svg'
+        },
+
+        {
+            label: 'UnoCss',
+            docUrl: 'https://unocss.dev/guide/',
+            logo: 'https://api.iconify.design/vscode-icons:file-type-unocss.svg'
+        },
+
+        {
+            label: 'Tanstack Svelte Query',
+            docUrl: 'https://tanstack.com/query/latest/docs/svelte/overview',
+            logo: 'https://api.iconify.design/logos:react-query-icon.svg'
+        },
+
+        {
+            label: 'Svelte Testing Library',
+            docUrl: 'https://testing-library.com/docs/svelte-testing-library/intro',
+            logo: 'https://api.iconify.design/openmoji:octopus.svg'
         }
     ],
 
@@ -253,44 +294,19 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             docUrl: 'https://unocss.dev/guide/',
             logo: 'https://api.iconify.design/vscode-icons:file-type-unocss.svg'
         },
+    ],
+
+    Miscellaneous: [
+        {
+            label: 'TypeScript',
+            docUrl: 'https://www.typescriptlang.org/',
+            logo: 'https://api.iconify.design/logos:typescript-icon.svg'
+        },
+
+        {
+            label: 'Eslint',
+            docUrl: 'https://eslint.org/',
+            logo: 'https://api.iconify.design/vscode-icons:file-type-eslint.svg'
+        }
     ]
 };
-
-
-
-// export const getReactFrameworkDocs = [
-//     {
-//         label: 'React',
-//         docUrl: 'https://react.dev/learn',
-//         logo: 'https://api.iconify.design/vscode-icons:file-type-reactjs.svg'
-//     },
-
-//     {
-//         label: 'NextJs',
-//         docUrl: 'https://nextjs.org/docs',
-//         logo: 'https://api.iconify.design/logos:nextjs-icon.svg'
-//     },
-
-
-//     {
-//         label: 'React Redux',
-//         docUrl: 'https://react-redux.js.org/',
-//         logo: 'https://api.iconify.design/logos:redux.svg'
-//     },
-
-//     {
-//         label: 'Zustand',
-//         docUrl: 'https://docs.pmnd.rs/zustand/getting-started/introduction',
-//         logo: 'https://api.iconify.design/openmoji:bear.svg'
-//     },
-
-//     {
-//         label: 'Recoil',
-//         docUrl: 'https://recoiljs.org/docs/introduction/getting-started/',
-//         logo: 'https://api.iconify.design/simple-icons:recoil.svg?color=%23000000'
-//     },
-
-//     {
-
-//     }
-// ]
