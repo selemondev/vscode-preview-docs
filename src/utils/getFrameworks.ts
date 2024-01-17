@@ -8,18 +8,14 @@ export const getLanguageFrameworks = [
     },
 
     {
-        label: 'Astro'
-    },
-
-    {
         label: 'Svelte'
     },
 
     {
-        label: 'Solid'
+        label: 'Astro'
     },
 
     {
-        label: 'Qwik'
+        label: 'Miscellaneous'
     }
 ]
