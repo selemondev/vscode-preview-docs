@@ -1,13 +1,39 @@
 {
-  "name": "preview-docs",
-  "displayName": "Preview Docs",
-  "description": "Preview Documentation right in your IDE.",
+  "name": "vscode-preview-docs",
   "version": "0.0.1",
+  "displayName": "Preview Docs",
+  "description": "Preview language and framework Documentations within your IDE ✨.",
+  "publisher": "Selemondev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/selemondev/vscode-preview-docs"
+  },
+  "bugs": {
+    "url": "https://github.com/selemondev/vscode-preview-docs/issues",
+    "email": "selemonsrdev@gmail.com"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Programming Languages",
+    "Linters",
+    "Visualization"
+  ],
+  "keywords": [
+    "react, vue",
+    "shadcn-svelte",
+    "nuxt remix",
+    "shadcn-svelte-snippet",
+    "shadcn-svelte-snippets",
+    "shadcn-react-snippet",
+    "shadcn-vue-snippets",
+    "snippets",
+    "shadcn-snippets",
+    "react snippets",
+    "shadcn-vue snippets",
+    "svelte typescript react vue solid astro"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
@@ -24,11 +50,7 @@
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
-    "lint": "eslint src --ext ts",
-    "test": "vscode-test"
+    "lint": "eslint src --ext ts"
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
