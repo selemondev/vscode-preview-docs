@@ -101,6 +101,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         },
 
         {
+            label: 'Vue Testing Library',
+            docUrl: 'https://testing-library.com/docs/vue-testing-library/intro',
+            logo: 'https://api.iconify.design/openmoji:octopus.svg'
+        },
+
+        {
             label: 'Vue Test Utils',
             docUrl: 'https://test-utils.vuejs.org/guide/',
             logo: 'https://api.iconify.design/logos:vue.svg?color=%2314b817'
@@ -143,6 +149,91 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             docUrl: 'https://recoiljs.org/docs/introduction/getting-started/',
             logo: 'https://api.iconify.design/simple-icons:recoil.svg?color=%23000000'
         },
+
+        {
+            label: 'React Router',
+            docUrl: 'https://reactrouter.com/en/main',
+            logo: 'https://api.iconify.design/logos:react-router.svg'
+        },
+
+        {
+            label: 'Use Hooks',
+            docUrl: 'https://usehooks.com/',
+            logo: 'https://api.iconify.design/tabler:fish-hook.svg'
+        },
+
+        {
+            label: 'TailwindCss',
+            docUrl: 'https://tailwindcss.com/docs/installation',
+            logo: 'https://api.iconify.design/devicon:tailwindcss.svg'
+        },
+
+        {
+            label: 'UnoCss',
+            docUrl: 'https://unocss.dev/guide/',
+            logo: 'https://api.iconify.design/vscode-icons:file-type-unocss.svg'
+        },
+
+        {
+            label: 'Shadcn React',
+            docUrl: 'https://ui.shadcn.com/docs',
+            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg'
+        },
+
+        {
+            label: 'Next UI',
+            docUrl: 'https://nextui.org/docs/guide/introduction',
+            logo: 'https://api.iconify.design/logos:nextjs-icon.svg'
+        },
+
+        {
+            label: 'PrimeReact',
+            docUrl: 'https://primereact.org/installation/',
+            logo: 'https://api.iconify.design/prime:prime.svg?color=%2314c7eb'
+        },
+
+
+        {
+            label: 'Material UI',
+            docUrl: 'https://mui.com/core/',
+            logo: 'https://api.iconify.design/simple-icons:mui.svg'
+        },
+
+        {
+            label: 'Chakra UI',
+            docUrl: 'https://chakra-ui.com/getting-started',
+            logo: 'https://api.iconify.design/simple-icons:chakraui.svg',
+        },
+
+        {
+            label: 'Headless UI',
+            docUrl: 'https://headlessui.com/react/menu',
+            logo: "https://api.iconify.design/logos:headlessui-icon.svg"
+        },
+
+        {
+            label: 'Docusaurus',
+            docUrl: 'https://docusaurus.io/docs',
+            logo: 'https://docusaurus.io/img/docusaurus.svg'
+        },
+
+        {
+            label: 'Tanstack React Query',
+            docUrl: 'https://tanstack.com/query/latest/docs/react/overview',
+            logo: 'https://api.iconify.design/logos:react-query-icon.svg'
+        },
+
+        {
+            label: 'React Testing Library',
+            docUrl: 'https://testing-library.com/docs/react-testing-library/intro',
+            logo: 'https://api.iconify.design/openmoji:octopus.svg'
+        },
+
+        {
+            label: 'Vitest',
+            docUrl: 'https://vitest.dev/guide/',
+            logo: 'https://api.iconify.design/logos:vitest.svg'
+        }
     ]
 };
 
