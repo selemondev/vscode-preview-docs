@@ -58,6 +58,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         },
 
         {
+            label: 'Park UI',
+            docUrl: 'https://park-ui.com/docs/panda/overview/getting-started',
+            logo: 'https://api.iconify.design/uil:parking-circle.svg'
+        },
+
+        {
             label: 'Nuxt UI',
             docUrl: 'https://ui.nuxt.com/getting-started',
             logo: 'https://api.iconify.design/logos:nuxt-icon.svg'
@@ -181,6 +187,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         },
 
         {
+            label: 'Park UI',
+            docUrl: 'https://park-ui.com/docs/panda/overview/getting-started',
+            logo: 'https://api.iconify.design/uil:parking-circle.svg'
+        },
+
+        {
             label: 'Next UI',
             docUrl: 'https://nextui.org/docs/guide/introduction',
             logo: 'https://api.iconify.design/logos:nextjs-icon.svg'
@@ -282,6 +294,11 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             label: 'Astro',
             docUrl: 'https://docs.astro.build/en/getting-started/',
             logo: 'https://api.iconify.design/devicon:astro.svg'
+        },
+        {
+            label: 'Park UI',
+            docUrl: 'https://park-ui.com/docs/panda/overview/getting-started',
+            logo: 'https://api.iconify.design/uil:parking-circle.svg'
         },
         {
             label: 'TailwindCss',
