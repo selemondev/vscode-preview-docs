@@ -1,8 +1,5 @@
 export const getLanguageFrameworks = [
     {
-        label: 'MDN',
-    },
-    {
         label: 'Vue',
     },
 

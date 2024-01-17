@@ -234,6 +234,25 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             docUrl: 'https://vitest.dev/guide/',
             logo: 'https://api.iconify.design/logos:vitest.svg'
         }
+    ],
+
+    Astro: [
+        {
+            label: 'Astro',
+            docUrl: 'https://docs.astro.build/en/getting-started/',
+            logo: 'https://api.iconify.design/devicon:astro.svg'
+        },
+        {
+            label: 'TailwindCss',
+            docUrl: 'https://tailwindcss.com/docs/installation',
+            logo: 'https://api.iconify.design/devicon:tailwindcss.svg'
+        },
+
+        {
+            label: 'UnoCss',
+            docUrl: 'https://unocss.dev/guide/',
+            logo: 'https://api.iconify.design/vscode-icons:file-type-unocss.svg'
+        },
     ]
 };
 
