@@ -2,7 +2,7 @@
   "name": "vscode-preview-docs",
   "version": "0.0.1",
   "displayName": "Preview Docs",
-  "description": "Preview language and framework Documentations within your IDE ✨.",
+  "description": "Preview language and framework documentations within your IDE ✨.",
   "publisher": "Selemondev",
   "repository": {
     "type": "git",
