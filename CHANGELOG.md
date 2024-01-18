@@ -4,6 +4,32 @@ All notable changes to the "preview-docs" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## v0.0.2
+
+[compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.0.1...v0.0.2)
+
+### 🚀 Enhancements
+
+- Add more doc links ([6c967af](https://github.com/selemondev/vscode-preview-docs/commit/6c967af))
+
+### 🩹 Fixes
+
+- Extension description ([f3508c6](https://github.com/selemondev/vscode-preview-docs/commit/f3508c6))
+
+### 📖 Documentation
+
+- Update README ([002bcbc](https://github.com/selemondev/vscode-preview-docs/commit/002bcbc))
+
+### 🏡 Chore
+
+- **release:** V0.0.1 ([97f0cbc](https://github.com/selemondev/vscode-preview-docs/commit/97f0cbc))
+- Downgrade vscode engine version ([b665ed5](https://github.com/selemondev/vscode-preview-docs/commit/b665ed5))
+
+### ❤️ Contributors
+
+- Selemon Dev <selemon@nathandigital.com>
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.0.1
 
 
