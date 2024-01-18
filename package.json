@@ -1,6 +1,6 @@
 {
   "name": "vscode-preview-docs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "Preview Docs",
   "description": "Preview language and framework documentations within your IDE ✨.",
   "publisher": "Selemondev",
