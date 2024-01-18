@@ -34,6 +34,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         },
 
         {
+            label: 'Nuxt Sidebase Auth',
+            docUrl: 'https://sidebase.io/nuxt-auth/getting-started',
+            logo: 'https://api.iconify.design/devicon:nuxtjs.svg'
+        },
+
+        {
             label: 'TailwindCss',
             docUrl: 'https://tailwindcss.com/docs/installation',
             logo: 'https://api.iconify.design/devicon:tailwindcss.svg'
@@ -107,6 +113,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         },
 
         {
+            label: 'Lucide Vue',
+            docUrl:  'https://lucide.dev/guide/packages/lucide-vue-next',
+            logo: 'https://api.iconify.design/logos:vue.svg'
+        },
+
+        {
             label: 'Vue Testing Library',
             docUrl: 'https://testing-library.com/docs/vue-testing-library/intro',
             logo: 'https://api.iconify.design/openmoji:octopus.svg'
@@ -160,6 +172,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             label: 'Use Hooks',
             docUrl: 'https://usehooks.com/',
             logo: 'https://api.iconify.design/tabler:fish-hook.svg'
+        },
+
+        {
+            label: 'Next Auth',
+            docUrl: 'https://next-auth.js.org/getting-started/example',
+            logo: 'https://api.iconify.design/carbon:two-factor-authentication.svg'
         },
 
         {
@@ -236,6 +254,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         },
 
         {
+            label: 'Lucide React',
+            docUrl:  'https://lucide.dev/guide/packages/lucide-react',
+            logo: 'https://api.iconify.design/vscode-icons:file-type-reactjs.svg'
+        },
+
+        {
             label: 'React Testing Library',
             docUrl: 'https://testing-library.com/docs/react-testing-library/intro',
             logo: 'https://api.iconify.design/openmoji:octopus.svg'
@@ -282,6 +306,13 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             logo: 'https://api.iconify.design/logos:react-query-icon.svg'
         },
 
+
+        {
+            label: 'Lucide Svelte',
+            docUrl:  'https://lucide.dev/guide/packages/lucide-svelte',
+            logo: 'https://api.iconify.design/logos:svelte-icon.svg'
+        },
+
         {
             label: 'Svelte Testing Library',
             docUrl: 'https://testing-library.com/docs/svelte-testing-library/intro',
@@ -324,6 +355,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             label: 'Eslint',
             docUrl: 'https://eslint.org/',
             logo: 'https://api.iconify.design/vscode-icons:file-type-eslint.svg'
+        },
+
+        {
+            label: 'Iconify',
+            docUrl: 'https://icones.js.org/',
+            logo: 'https://api.iconify.design/lucide:wand.svg'
         }
     ]
 };
