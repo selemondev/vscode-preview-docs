@@ -8,7 +8,7 @@ This VSCode Extension enables you to preview language and framework documentatio
 
 # Breaking Changes 🚧
 
-With the next release around the corner, it is recommended to downgrade `Preview Doc`s version to v0.0.3 as shown below:
+With the next release around the corner, it is recommended to downgrade `Preview Doc`s version to v0.0.3 as shown below to avoid encountering errors:
 
 ```bash
 code --install-extension selemondev.vscode-preview-docs@0.0.3
