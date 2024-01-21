@@ -1,7 +1,8 @@
 {
   "name": "vscode-preview-docs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "Preview Docs",
+  "packageManager": "pnpm@8.14.1",
   "description": "Preview language and framework documentations within your IDE ✨.",
   "publisher": "Selemondev",
   "repository": {
@@ -35,9 +36,35 @@
     "shadcn-vue snippets",
     "svelte typescript react vue solid astro"
   ],
-  "activationEvents": [],
-  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "files": [
+    "out"
+  ],
+  "main": "./out/extension.js",
+  "icon": "assets/logo.png",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "sidebar-view",
+          "title": "Preview Docs",
+          "icon": "./assets/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "sidebar-view": [
+        {
+          "type": "webview",
+          "id": "previewDocSidebar",
+          "name": "Sidebar",
+          "icon": "./assets/logo.svg",
+          "contextualTitle": "Preview Docs"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "previewDocs.initPreviewDocs",
@@ -45,25 +72,40 @@
       }
     ]
   },
+  "permissions": [
+    "webview",
+    "http"
+  ],
   "scripts": {
-    "vscode:prepublish": "yarn run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "lint": "eslint src --ext ts"
+    "install:all": "pnpm install && cd ui && pnpm install",
+    "build": "tsup && cd ui && pnpm build",
+    "vscode:prepublish": "pnpm build",
+    "dev": "pnpm build -- --watch",
+    "lint": "eslint --cache ./src --ext .ts --fix",
+    "package": "vsce package --no-dependencies",
+    "publish:release": "vsce publish --no-dependencies",
+    "publish:pre": "vsce publish --pre-release --no-dependencies",
+    "release": "pnpm build && changelogen --release --push && pnpm publish:release",
+    "prerelease": "pnpm build && changelogen --prerelease --push && pnpm publish:pre",
+    "typecheck": "tsc --noEmit",
+    "knip": "knip"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
-    "eslint": "^8.54.0",
-    "typescript": "^5.3.2",
-    "ts-loader": "^9.5.1",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
     "@vscode/test-cli": "^0.0.4",
-    "@vscode/test-electron": "^2.3.8"
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.54.0",
+    "knip": "^4.1.0",
+    "ts-loader": "^9.5.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "pkg-types": "^1.0.3",
+    "terser": "^5.27.0"
   }
 }

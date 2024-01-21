@@ -1,52 +1,13 @@
-import * as vscode from 'vscode';
-import { commands } from './utils/commands';
-import { getLanguageFrameworks } from './utils/getFrameworks';
-import { getLanguageFrameworkDocs } from './utils/getFrameworksDocs';
-import { getWebviewContent } from './utils/getWebViewContent';
+import type { ExtensionContext } from "vscode";
+import { DocsView } from './sidebar';
+import { filesWatcher } from './watchers';
+export async function activateExtension(context: ExtensionContext) {
 
-export function activate(context: vscode.ExtensionContext) {
-	const disposables: vscode.Disposable[] = [
-		vscode.commands.registerCommand(commands.initPreviewDocs, async () => {
-			if (!getLanguageFrameworks) {
-				vscode.window.showErrorMessage("Can not get language frameworks list");
-				return;
-			}
+    const sidebarProvider = new DocsView(context.extensionUri);
 
-			const selectedLangFramework = await vscode.window.showQuickPick(getLanguageFrameworks, {
-				matchOnDescription: true,
-			});
 
-			if (!selectedLangFramework) {
-				return;
-			}
-
-			const selectedLangFrameworkDocs = getLanguageFrameworkDocs[selectedLangFramework.label];
-
-			if (!selectedLangFrameworkDocs) {
-				return;
-			}
-
-			const selectedLangFrameworkDoc = await vscode.window.showQuickPick(selectedLangFrameworkDocs, {
-				matchOnDescription: true,
-			});
-
-			if (!selectedLangFrameworkDoc) {
-				return;
-			}
-
-			const panel = vscode.window.createWebviewPanel(
-				'webDocs',
-				selectedLangFrameworkDoc.label,
-				vscode.ViewColumn.One,
-				{
-					enableScripts: true,
-					retainContextWhenHidden: true,
-				}
-			);
-			panel.webview.html = getWebviewContent(selectedLangFrameworkDoc);
-		}),
-	];
-	context.subscriptions.push(...disposables);
+    // Initialize file watchers
+    new filesWatcher(sidebarProvider, context);
 }
 
 // This method is called when your extension is deactivated
