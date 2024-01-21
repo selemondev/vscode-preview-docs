@@ -1,6 +1,9 @@
 import { createApp } from 'vue';
 import './assets/css/tailwind.css';
 import App from './App.vue';
+import { provideVSCodeDesignSystem } from "@vscode/webview-ui-toolkit";
 
-createApp(App).mount('#app');
+provideVSCodeDesignSystem().register();
+const app = createApp(App);
+app.mount('#app');
 
