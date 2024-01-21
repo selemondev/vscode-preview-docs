@@ -1,6 +1,6 @@
 {
   "name": "vscode-preview-docs",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "displayName": "Preview Docs",
   "packageManager": "pnpm@8.14.1",
   "description": "Preview language and framework documentations within your IDE ✨.",
@@ -37,7 +37,7 @@
     "svelte typescript react vue solid astro"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "onView:previewDocSidebar"
   ],
   "files": [
     "out"

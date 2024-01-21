@@ -54,13 +54,13 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Shadcn Vue',
             docUrl: 'https://www.shadcn-vue.com/docs/introduction.html',
-            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg'
+            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg?color=%2305ff71'
         },
 
         {
             label: 'Park UI',
             docUrl: 'https://park-ui.com/docs/panda/overview/getting-started',
-            logo: 'https://api.iconify.design/uil:parking-circle.svg'
+            logo: 'https://raw.githubusercontent.com/selemondev/vscode-park-ui/master/src/images/icon.png'
         },
 
         {
