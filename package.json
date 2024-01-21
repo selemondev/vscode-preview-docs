@@ -1,6 +1,6 @@
 {
   "name": "vscode-preview-docs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "displayName": "Preview Docs",
   "packageManager": "pnpm@8.14.1",
   "description": "Preview language and framework documentations within your IDE ✨.",
@@ -93,7 +93,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
-    "@types/vscode": "^1.85.0",
+    "@types/vscode": "^1.84.0",
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
     "@vscode/test-cli": "^0.0.4",
