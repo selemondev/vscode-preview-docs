@@ -1,6 +1,6 @@
 {
   "name": "vscode-preview-docs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "displayName": "Preview Docs",
   "packageManager": "pnpm@8.14.1",
   "description": "Preview language and framework documentations within your IDE ✨.",
@@ -14,7 +14,7 @@
     "email": "selemonsrdev@gmail.com"
   },
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.84.0"
   },
   "categories": [
     "Other",
