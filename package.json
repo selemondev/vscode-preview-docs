@@ -1,6 +1,6 @@
 {
   "name": "vscode-preview-docs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "displayName": "Preview Docs",
   "packageManager": "pnpm@8.14.1",
   "description": "Preview language and framework documentations within your IDE ✨.",
@@ -42,8 +42,7 @@
   "files": [
     "out"
   ],
-  "main": "./out/extension.js",
-  "icon": "assets/logo.png",
+  "main": "./out/index.js",
   "contributes": {
     "viewsContainers": {
       "activitybar": [

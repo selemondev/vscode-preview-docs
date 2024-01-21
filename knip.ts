@@ -6,7 +6,6 @@ const config: KnipConfig = {
             entry: 'src/index.ts',
             ignoreDependencies: ['terser'],
             ignoreBinaries: ['vsce'],
-            ignore: ['taze.config.ts'],
             tsup: {
                 config: 'tsup.config.ts'
             },
