@@ -5,7 +5,7 @@ import { DocsView } from "./sidebar/index";
 import * as vscode from 'vscode';
 
 export async function activate(context: ExtensionContext) {
-    commands.executeCommand('setContext');
+    // commands.executeCommand('setContext');
 
     const provider = new DocsView(context.extensionUri);
 
