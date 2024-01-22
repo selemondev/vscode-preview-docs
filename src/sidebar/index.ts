@@ -18,46 +18,33 @@ export class DocsView implements vscode.WebviewViewProvider {
 
     public resolveWebviewView(webviewView: vscode.WebviewView) {
         this._view = webviewView;
-
+    
         webviewView.webview.options = {
             enableScripts: true,
             localResourceRoots: [this._extensionUri],
         };
-
+    
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         console.log('Webview resolved. Trying to initialize dependencies.');
-
-        // in case the user reload the window while opening the extension tab
+    
+        // Call the method to initialize dependencies
+        this.goToProjectView();
+    
+        // in case the user reloads the window while opening the extension tab
         if (webviewView.visible) {
             console.log('Webview is visible. Initializing dependencies.');
-            this._initializeDependencies();
             this.goToProjectView();
         }
-
+    
         webviewView.onDidChangeVisibility((e) => {
             if (webviewView.visible) {
                 console.log('Webview became visible. Going to project view.');
                 this.goToProjectView();
             }
         });
-    };
-
-
-    private async _initializeDependencies() {
-        // Load dependencies when the webview is resolved
-        const dependencies = await getProjectDependencies();
-
-        // Post the dependencies to the webview
-        this.postMessage({
-            command: 'dependencyData',
-            data: {
-                dependencies: dependencies,
-            },
-        });
     }
-
-    public goToProjectView() {
-        vscode.window.showInformationMessage('Active')
+    
+    public async goToProjectView() {
         this.getDependencies();
     }
 
@@ -80,24 +67,6 @@ export class DocsView implements vscode.WebviewViewProvider {
         const stylesUri = getUri(webview, this._extensionUri, ['ui', 'build', 'assets', 'index.css']);
         // The JS file from the Vue build output
         const scriptUri = getUri(webview, this._extensionUri, ['ui', 'build', 'assets', 'index.js']);
-
-        //     return /*html*/ `
-        //   <!DOCTYPE html>
-        //   <html lang="en">
-        //     <head>
-        //       <meta charset="UTF-8" />
-        //       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        //       <meta http-equiv="Content-Security-Policy" content="default-src https://fonts.gstatic.com/ https://fonts.googleapis.com/  img-src https: data: style-src 'unsafe-inline' ${webview.cspSource} script-src 'nonce-${nonce}'">
-        //       <link rel="stylesheet" type="text/css" href="${stylesUri}">
-        //       <title>Preview Docs</title>
-        //     </head>
-        //     <body>
-        //       <div id="app"></div>
-        //       <script type="module" nonce="${nonce}" src="${scriptUri}"></script>
-        //     </body>
-        //   </html>
-        // `;
-
         return `<!DOCTYPE html>
     <html lang="en">
     <head>

@@ -1,6 +1,6 @@
 {
   "name": "vscode-preview-docs",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "displayName": "Preview Docs",
   "packageManager": "pnpm@8.14.1",
   "description": "Preview language and framework documentations within your IDE ✨.",
@@ -57,7 +57,7 @@
       "sidebar-view": [
         {
           "type": "webview",
-          "id": "previewDocSidebar",
+          "id": "previewDocSidebarBeta",
           "name": "Sidebar",
           "icon": "./assets/logo.svg",
           "contextualTitle": "Preview Docs"
