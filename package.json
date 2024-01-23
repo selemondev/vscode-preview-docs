@@ -57,7 +57,7 @@
       "sidebar-view": [
         {
           "type": "webview",
-          "id": "previewDocSidebarBeta",
+          "id": "previewDocSidebar",
           "name": "Sidebar",
           "icon": "./assets/logo.svg",
           "contextualTitle": "Preview Docs"

@@ -26,6 +26,8 @@ export class DocsView implements vscode.WebviewViewProvider {
     
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         console.log('Webview resolved. Trying to initialize dependencies.');
+
+        
     
         // Call the method to initialize dependencies
         this.goToProjectView();
@@ -61,7 +63,7 @@ export class DocsView implements vscode.WebviewViewProvider {
         if (this._view) {
             this._view.webview.postMessage(message);
         }
-    }
+    };
 
     private _getHtmlForWebview(webview: vscode.Webview) {
         const stylesUri = getUri(webview, this._extensionUri, ['ui', 'build', 'assets', 'index.css']);
@@ -77,11 +79,11 @@ export class DocsView implements vscode.WebviewViewProvider {
             and only allow scripts that have a specific nonce.
             (See the 'webview-sample' extension sample for img-src content security policy examples)
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src https://fonts.gstatic.com/ https://fonts.googleapis.com/ https://api.iconify.design https://ozgtbqizepstargxfqcm.supabase.co/  img-src https: data: style-src 'unsafe-inline' ${webview.cspSource} script-src 'nonce-${nonce}'">
+        <meta http-equiv="Content-Security-Policy" content="default-src https://fonts.gstatic.com/ https://fonts.googleapis.com/ https://nuxt.com https://api.iconify.design https://ozgtbqizepstargxfqcm.supabase.co/  img-src https: data: style-src 'unsafe-inline' ${webview.cspSource} script-src 'nonce-${nonce}'">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="${stylesUri}" rel="stylesheet">
 
-        <title>Cat Colors</title>
+        <title>Preview Docs</title>
     </head>
     <body>
         <div id="app"></div>
