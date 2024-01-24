@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import { vscode } from "./../utils/vscode";
-import { ref } from "vue";
-
 const props = defineProps<{
     docLogo: string;
     docUrl: string;
-    docLabel: string
+    docLabel: string;
+    dep: string
 }>();
-
-const clicked = ref(false);
-
-const handleOpenDocs = (label: string) => {
+const handleOpenDocs = (label: string, logo: string, docUrl: string) => {
     vscode.postMessage({
         command: "openDocs",
-        text: label
+        text: {
+            label: label,
+            logo: logo,
+            docUrl: docUrl
+        }
     });
-    clicked.value = !clicked.value
 }
 </script>
 <template>
@@ -31,7 +30,9 @@ const handleOpenDocs = (label: string) => {
                     </div>
                 </div>
                 <div class="mt-2 flex flex-wrap items-center gap-3">
-                    <button type="button" @click.prevent="handleOpenDocs(props.docLabel)" class="text-xs text-[#00DC82]">Read
+                    <button type="button" @click.prevent="handleOpenDocs(props.docLabel, props.docLogo, props.docUrl)"
+                        :class="props.dep === 'react' ? 'text-cyan-500 hover:text-cyan-600' : 'text-[#00DC82]'"
+                        class="text-xs transition-all duration-200 ease-in">Read
                         Docs</button>
                 </div>
             </div>

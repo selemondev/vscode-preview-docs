@@ -9,7 +9,8 @@ interface LanguageFrameworkDoc {
 };
 
 const props = defineProps<{
-    frameworkDocs: LanguageFrameworkDoc[]
+    frameworkDocs: LanguageFrameworkDoc[],
+    dep: string
 }>();
 
 const searchResult = ref('');
@@ -31,6 +32,6 @@ onMounted(() => {
     </div>
     <div class="mt-2 w-full">
         <DocsCard v-for="(doc, index) in filteredFrameworkDocs" :key="index" :docUrl="doc.docUrl" :docLogo="doc.logo"
-            :docLabel="doc.label" />
+            :docLabel="doc.label" :dep="props.dep" />
     </div>
 </template>

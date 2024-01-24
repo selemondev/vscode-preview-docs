@@ -1,8 +1,9 @@
-type URI = {
-  label: string,
+type URI =  {
+  label: string;
   logo: string;
   docUrl: string
-}
+};
+
 export const getWebviewContent = (uri: URI) => {
   const html = `
   <!DOCTYPE html>
@@ -19,7 +20,7 @@ export const getWebviewContent = (uri: URI) => {
   </head>
   <body>
     <iframe width="100%" height="100%" src="${uri.docUrl}" frameborder="0">
-      <p>Can't load ${uri.label}</p>
+      <p>Can't load ${uri.docUrl}</p>
     </iframe>
   </body>
   </html>

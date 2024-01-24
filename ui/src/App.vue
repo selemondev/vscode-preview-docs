@@ -14,6 +14,7 @@ interface LanguageFrameworkDoc {
 }
 
 const dependencies = ref<Dependency[]>([]);
+const dependency = ref('')
 const frameworkDocs = ref<LanguageFrameworkDoc[]>([]);
 const messageEvent = ref('')
 window.addEventListener('message', (event: any) => {
@@ -27,17 +28,24 @@ window.addEventListener('message', (event: any) => {
 watch(() => dependencies, () => {
   for (const dep of dependencies.value) {
     if (dep.name === 'nuxt') {
+      dependency.value = 'vue'
       frameworkDocs.value = getLanguageFrameworkDocs['Vue'];
-      break; // Exit the loop after setting frameworkDocs
+      break;
+    };
+
+    if (dep.name === 'react') {
+      dependency.value = 'react'
+      frameworkDocs.value = getLanguageFrameworkDocs['React'];
+      break;
     }
   }
 }, {
   deep: true
-})
+});
 </script>
 
 <template>
   <div class="flex w-full flex-col">
-    <Docs :framework-docs="frameworkDocs" />
+    <Docs :framework-docs="frameworkDocs" :dep="dependency" />
   </div>
 </template>

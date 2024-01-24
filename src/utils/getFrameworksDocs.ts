@@ -54,7 +54,7 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Radix Vue',
             docUrl: 'https://www.radix-vue.com/overview/getting-started',
-            logo: "https://api.iconify.design/simple-icons:radixui.svg"
+            logo: "https://api.iconify.design/simple-icons:radixui.svg?color=%23ffffff"
         },
 
         {
@@ -66,7 +66,7 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Park UI',
             docUrl: 'https://park-ui.com/docs/panda/overview/getting-started',
-            logo: 'https://api.iconify.design/uil:parking-circle.svg'
+            logo: 'https://raw.githubusercontent.com/selemondev/vscode-park-ui/master/src/images/icon.png'
         },
 
         {
@@ -140,7 +140,7 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Remix',
             docUrl: 'https://remix.run/docs/en/main/start/quickstart',
-            logo: 'https://api.iconify.design/simple-icons:remix.svg?color=%23000000'
+            logo: 'https://api.iconify.design/simple-icons:remix.svg?color=%23ffffff'
         },
 
 
@@ -159,7 +159,7 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Recoil',
             docUrl: 'https://recoiljs.org/docs/introduction/getting-started/',
-            logo: 'https://api.iconify.design/simple-icons:recoil.svg?color=%23000000'
+            logo: 'https://api.iconify.design/simple-icons:recoil.svg?color=%23ffffff'
         },
 
         {
@@ -195,19 +195,19 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Radix UI',
             docUrl: 'https://www.radix-ui.com/themes/docs/overview/getting-started',
-            logo: "https://api.iconify.design/simple-icons:radixui.svg"
+            logo: "https://api.iconify.design/simple-icons:radixui.svg?color=%23ffffff"
         },
 
         {
             label: 'Shadcn React',
             docUrl: 'https://ui.shadcn.com/docs',
-            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg'
+            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg?color=%231baede'
         },
 
         {
             label: 'Park UI',
             docUrl: 'https://park-ui.com/docs/panda/overview/getting-started',
-            logo: 'https://api.iconify.design/uil:parking-circle.svg'
+            logo: 'https://raw.githubusercontent.com/selemondev/vscode-park-ui/master/src/images/icon.png'
         },
 
         {
@@ -226,13 +226,13 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Material UI',
             docUrl: 'https://mui.com/core/',
-            logo: 'https://api.iconify.design/simple-icons:mui.svg'
+            logo: 'https://api.iconify.design/logos:material-ui.svg'
         },
 
         {
             label: 'Chakra UI',
             docUrl: 'https://chakra-ui.com/getting-started',
-            logo: 'https://api.iconify.design/simple-icons:chakraui.svg',
+            logo: 'https://api.iconify.design/simple-icons:chakraui.svg?color=%231bde8a',
         },
 
         {
