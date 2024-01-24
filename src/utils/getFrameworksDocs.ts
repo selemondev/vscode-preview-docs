@@ -263,6 +263,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             label: 'React Testing Library',
             docUrl: 'https://testing-library.com/docs/react-testing-library/intro',
             logo: 'https://api.iconify.design/openmoji:octopus.svg'
+        },
+
+        {
+            label: 'Radix - UI',
+            docUrl: 'https://www.radix-ui.com/themes/docs/overview/getting-started',
+            logo: 'https://www.radix-ui.com/favicon.png'
         }
     ],
 
