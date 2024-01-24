@@ -5,6 +5,7 @@ import {
     getUri,
     getProjectDependencies,
 } from '../utils';
+import { getWebviewContent } from '../utils/getWebViewContent';
 
 // random number generated for security measure to enable Content Security Policy (CSP)
 const nonce = getNonce();
@@ -18,34 +19,30 @@ export class DocsView implements vscode.WebviewViewProvider {
 
     public resolveWebviewView(webviewView: vscode.WebviewView) {
         this._view = webviewView;
-    
+
         webviewView.webview.options = {
             enableScripts: true,
             localResourceRoots: [this._extensionUri],
         };
-    
-        webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
-        console.log('Webview resolved. Trying to initialize dependencies.');
 
-        
-    
+        webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
+        this._setWebviewMessageListener(webviewView.webview);
+
         // Call the method to initialize dependencies
         this.goToProjectView();
-    
+
         // in case the user reloads the window while opening the extension tab
         if (webviewView.visible) {
-            console.log('Webview is visible. Initializing dependencies.');
             this.goToProjectView();
         }
-    
+
         webviewView.onDidChangeVisibility((e) => {
             if (webviewView.visible) {
-                console.log('Webview became visible. Going to project view.');
                 this.goToProjectView();
             }
         });
     }
-    
+
     public async goToProjectView() {
         this.getDependencies();
     }
@@ -64,6 +61,33 @@ export class DocsView implements vscode.WebviewViewProvider {
             this._view.webview.postMessage(message);
         }
     };
+
+    private _setWebviewMessageListener(webview: vscode.Webview) {
+        webview.onDidReceiveMessage(async (message: any) => {
+            const { command, text } = message;
+            switch (command) {
+                case 'openDocs':
+                    const panel = vscode.window.createWebviewPanel(
+                        'webDocs',
+                        text.label,
+                        vscode.ViewColumn.One,
+                        {
+            
+                            // https://code.visualstudio.com/docs/extensions/webview#_scripts-and-message-passing
+                            enableScripts: true,
+            
+                            // https://code.visualstudio.com/docs/extensions/webview#_persistence
+                            retainContextWhenHidden: true,
+                        }
+                    );
+                    panel.webview.html = getWebviewContent(text);
+                    vscode.window.showInformationMessage(text);
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
 
     private _getHtmlForWebview(webview: vscode.Webview) {
         const stylesUri = getUri(webview, this._extensionUri, ['ui', 'build', 'assets', 'index.css']);
