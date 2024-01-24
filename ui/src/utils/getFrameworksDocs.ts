@@ -34,6 +34,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         },
 
         {
+            label: 'Nuxt Sidebase Auth',
+            docUrl: 'https://sidebase.io/nuxt-auth/getting-started',
+            logo: 'https://api.iconify.design/devicon:nuxtjs.svg'
+        },
+
+        {
             label: 'TailwindCss',
             docUrl: 'https://tailwindcss.com/docs/installation',
             logo: 'https://api.iconify.design/devicon:tailwindcss.svg'
@@ -48,13 +54,13 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Radix Vue',
             docUrl: 'https://www.radix-vue.com/overview/getting-started',
-            logo: "https://api.iconify.design/simple-icons:radixui.svg"
+            logo: "https://api.iconify.design/simple-icons:radixui.svg?color=%23ffffff"
         },
 
         {
             label: 'Shadcn Vue',
             docUrl: 'https://www.shadcn-vue.com/docs/introduction.html',
-            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg?color=%2305ff71'
+            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg'
         },
 
         {
@@ -107,6 +113,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         },
 
         {
+            label: 'Lucide Vue',
+            docUrl:  'https://lucide.dev/guide/packages/lucide-vue-next',
+            logo: 'https://api.iconify.design/emojione:candy.svg'
+        },
+
+        {
             label: 'Vue Testing Library',
             docUrl: 'https://testing-library.com/docs/vue-testing-library/intro',
             logo: 'https://api.iconify.design/openmoji:octopus.svg'
@@ -128,7 +140,7 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Remix',
             docUrl: 'https://remix.run/docs/en/main/start/quickstart',
-            logo: 'https://api.iconify.design/simple-icons:remix.svg?color=%23000000'
+            logo: 'https://api.iconify.design/simple-icons:remix.svg?color=%23ffffff'
         },
 
 
@@ -159,7 +171,13 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Use Hooks',
             docUrl: 'https://usehooks.com/',
-            logo: 'https://api.iconify.design/tabler:fish-hook.svg'
+            logo: 'https://api.iconify.design/tabler:fish-hook.svg?color=%23ffffff'
+        },
+
+        {
+            label: 'Next Auth',
+            docUrl: 'https://next-auth.js.org/getting-started/example',
+            logo: 'https://api.iconify.design/carbon:two-factor-authentication.svg?color=%23ffffff'
         },
 
         {
@@ -177,19 +195,19 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Radix UI',
             docUrl: 'https://www.radix-ui.com/themes/docs/overview/getting-started',
-            logo: "https://api.iconify.design/simple-icons:radixui.svg"
+            logo: "https://api.iconify.design/simple-icons:radixui.svg?color=%23ffffff"
         },
 
         {
             label: 'Shadcn React',
             docUrl: 'https://ui.shadcn.com/docs',
-            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg'
+            logo: 'https://api.iconify.design/icon-park-outline:three-slashes.svg?color=%231baede'
         },
 
         {
             label: 'Park UI',
             docUrl: 'https://park-ui.com/docs/panda/overview/getting-started',
-            logo: 'https://api.iconify.design/uil:parking-circle.svg'
+            logo: 'https://raw.githubusercontent.com/selemondev/vscode-park-ui/master/src/images/icon.png'
         },
 
         {
@@ -208,13 +226,13 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
         {
             label: 'Material UI',
             docUrl: 'https://mui.com/core/',
-            logo: 'https://api.iconify.design/simple-icons:mui.svg'
+            logo: 'https://api.iconify.design/logos:material-ui.svg'
         },
 
         {
             label: 'Chakra UI',
             docUrl: 'https://chakra-ui.com/getting-started',
-            logo: 'https://api.iconify.design/simple-icons:chakraui.svg',
+            logo: 'https://api.iconify.design/simple-icons:chakraui.svg?color=%2313d88c',
         },
 
         {
@@ -233,6 +251,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             label: 'Tanstack React Query',
             docUrl: 'https://tanstack.com/query/latest/docs/react/overview',
             logo: 'https://api.iconify.design/logos:react-query-icon.svg'
+        },
+
+        {
+            label: 'Lucide React',
+            docUrl:  'https://lucide.dev/guide/packages/lucide-react',
+            logo: 'https://api.iconify.design/emojione:candy.svg'
         },
 
         {
@@ -282,6 +306,13 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             logo: 'https://api.iconify.design/logos:react-query-icon.svg'
         },
 
+
+        {
+            label: 'Lucide Svelte',
+            docUrl:  'https://lucide.dev/guide/packages/lucide-svelte',
+            logo: 'https://api.iconify.design/logos:svelte-icon.svg'
+        },
+
         {
             label: 'Svelte Testing Library',
             docUrl: 'https://testing-library.com/docs/svelte-testing-library/intro',
@@ -324,6 +355,12 @@ export const getLanguageFrameworkDocs: LanguageFrameworkDocs = {
             label: 'Eslint',
             docUrl: 'https://eslint.org/',
             logo: 'https://api.iconify.design/vscode-icons:file-type-eslint.svg'
+        },
+
+        {
+            label: 'Iconify',
+            docUrl: 'https://icones.js.org/',
+            logo: 'https://api.iconify.design/lucide:wand.svg'
         }
     ]
 };
