@@ -1,16 +1,10 @@
 import type { ExtensionContext } from "vscode";
 import * as vscode from "vscode";
 import { DocsView } from './sidebar';
-import { filesWatcher } from './watchers';
-import { getWebviewContent } from "./utils/getWebViewContent";
-export async function activateExtension(context: ExtensionContext) {
-
-    const sidebarProvider = new DocsView(context.extensionUri);
-    sidebarProvider.goToProjectView();
-
-
-    // Initialize file watchers
-    // new filesWatcher(sidebarProvider, context);
+export async function activate(context: ExtensionContext) {
+    const provider = new DocsView(context.extensionUri);
+    provider.getDependencies();
+    context.subscriptions.push(vscode.window.registerWebviewViewProvider(DocsView.viewType, provider));
 }
 
 // This method is called when your extension is deactivated

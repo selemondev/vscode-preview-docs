@@ -29,24 +29,19 @@ export class DocsView implements vscode.WebviewViewProvider {
         this._setWebviewMessageListener(webviewView.webview);
 
         // Call the method to initialize dependencies
-        this.goToProjectView();
+        this.getDependencies();
 
         // in case the user reloads the window while opening the extension tab
         if (webviewView.visible) {
-            this.goToProjectView();
+            this.getDependencies();
         }
 
         webviewView.onDidChangeVisibility((e) => {
             if (webviewView.visible) {
-                this.goToProjectView();
+                this.getDependencies();
             }
         });
     }
-
-    public async goToProjectView() {
-        this.getDependencies();
-    }
-
     public async getDependencies() {
         const dependencies = await getProjectDependencies();
         this.postMessage({

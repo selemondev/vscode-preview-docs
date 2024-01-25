@@ -40,21 +40,21 @@
     "onView:previewDocSidebar"
   ],
   "files": [
-    "out"
+    "dist"
   ],
-  "main": "./out/index.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "sidebar-view",
+          "id": "sidebar-preview-docs-view",
           "title": "Preview Docs",
           "icon": "./assets/logo.svg"
         }
       ]
     },
     "views": {
-      "sidebar-view": [
+      "sidebar-preview-docs-view": [
         {
           "type": "webview",
           "id": "previewDocSidebar",
@@ -64,12 +64,7 @@
         }
       ]
     },
-    "commands": [
-      {
-        "command": "previewDocs.initPreviewDocs",
-        "title": "Preview Docs: Open Preview Docs"
-      }
-    ]
+    "commands": []
   },
   "permissions": [
     "webview",

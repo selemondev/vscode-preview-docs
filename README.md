@@ -6,27 +6,17 @@
 
 This VSCode Extension enables you to preview language and framework documentations directly within your IDE ✨.
 
-# Breaking Changes 🚧
+Preview Docs automatically scans your `package.json` file and generates documentation specific to each language and framework.
 
-With the next release around the corner, it is recommended to downgrade `Preview Doc`s version to v0.0.3 as shown below to avoid encountering errors:
+## Preview Vue based framework and library documentations
 
-```bash
-code --install-extension selemondev.vscode-preview-docs@0.0.3
-```
+![Preview Vue based framework and library documentations](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/vue.png)
 
-## CTRL + SHIFT + P to open the VSCode command palette and type in Preview Docs: Open Preview Docs
+## Preview React based framework and library documentations
 
-![CTRL + SHIFT + P to open the VSCode command palette and type in Preview Docs: Open Preview Docs](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/terminal-window.png)
+![Preview React based framework and library documentations](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/react.png)
 
-## Choose a framework
+## Preview Svelte based framework and library documentations
 
-![Choose a framework](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/framework-select.png)
-
-## Choose framework documentation
-
-![Choose framework documentation](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/framework-docs.png)
-
-## Preview Documentation
-
-![Preview Documentation](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/docs.png)
+![Preview Svelte based framework and library documentations](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/svelte.png)
 
