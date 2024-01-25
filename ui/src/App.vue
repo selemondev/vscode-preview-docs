@@ -25,20 +25,34 @@ window.addEventListener('message', (event: any) => {
   }
 });
 
-watch(() => dependencies, () => {
-  for (const dep of dependencies.value) {
-    if (dep.name === 'nuxt') {
-      dependency.value = 'vue'
-      frameworkDocs.value = getLanguageFrameworkDocs['Vue'];
-      break;
-    };
+const specialDeps = new Set(['vue', 'nuxt', 'react', '@remix-run/react', 'svelte', '@sveltejs/kit']);
 
-    if (dep.name === 'react') {
-      dependency.value = 'react'
-      frameworkDocs.value = getLanguageFrameworkDocs['React'];
-      break;
+
+watch(() => dependencies.value, () => {
+  let updatedFrameworkDocs: LanguageFrameworkDoc[] = [];
+
+  for (const dep of dependencies.value) {
+    if (specialDeps.has(dep.name)) {
+      dependency.value = dep.name;
+    }
+    const packageNameLower = dep.name.toLowerCase();
+
+    // Check if the dep name starts with '@' and ends with 'nuxt' after the '/'
+    const isNuxtPackage = packageNameLower.startsWith('@') && packageNameLower.endsWith('/nuxt');
+
+    // If it's a Nuxt package, pick the dependency before '/'
+    const depKey = isNuxtPackage ? packageNameLower.split('/')[0] : packageNameLower;
+
+    const frameworkData = getLanguageFrameworkDocs[depKey];
+
+    if (frameworkData) {
+      updatedFrameworkDocs.push({
+        ...frameworkData
+      });
     }
   }
+
+  frameworkDocs.value = updatedFrameworkDocs;
 }, {
   deep: true
 });

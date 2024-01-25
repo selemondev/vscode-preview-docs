@@ -31,7 +31,7 @@ const handleOpenDocs = (label: string, logo: string, docUrl: string) => {
                 </div>
                 <div class="mt-2 flex flex-wrap items-center gap-3">
                     <button type="button" @click.prevent="handleOpenDocs(props.docLabel, props.docLogo, props.docUrl)"
-                        :class="props.dep === 'react' ? 'text-cyan-500 hover:text-cyan-600' : 'text-[#00DC82]'"
+                        :class="props.dep === 'react' || props.dep === '@remix-run/react' ? 'text-cyan-500 hover:text-cyan-600' : props.dep === 'vue' || props.dep === 'nuxt' ? 'text-[#00DC82] hover:text-[#3fb483]' : props.dep === 'svelte' || props.dep === '@sveltejs/kit' ? 'text-orange-500 hover:text-orange-600' : 'text-cyan-500 hover:text-cyan-600'"
                         class="text-xs transition-all duration-200 ease-in">Read
                         Docs</button>
                 </div>

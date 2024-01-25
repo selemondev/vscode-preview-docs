@@ -9,7 +9,7 @@
         "isolatedModules": true,
         "moduleDetection": "force",
         "rootDir": "src",
-        "outDir": "out",
+        "outDir": "dist",
         "strict": true,
         "skipLibCheck": true,
         "resolveJsonModule": true,
