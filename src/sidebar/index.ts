@@ -98,7 +98,7 @@ export class DocsView implements vscode.WebviewViewProvider {
             and only allow scripts that have a specific nonce.
             (See the 'webview-sample' extension sample for img-src content security policy examples)
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src https://fonts.gstatic.com/ https://fonts.googleapis.com/ https://nuxt.com https://api.iconify.design https://ozgtbqizepstargxfqcm.supabase.co/  img-src https: data: style-src 'unsafe-inline' ${webview.cspSource} script-src 'nonce-${nonce}'">
+        <meta http-equiv="Content-Security-Policy" content="default-src https://fonts.gstatic.com/ https://fonts.googleapis.com/ https://nuxt.com https://api.iconify.design  img-src https: data: style-src 'unsafe-inline' ${webview.cspSource} script-src 'nonce-${nonce}'">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="${stylesUri}" rel="stylesheet">
 
