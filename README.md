@@ -1,6 +1,6 @@
 <p align="center">
  <h1 align="center">
-  Preview Docs  ✨
+  VSCode Preview Docs  ✨
  </h1>
 </p>
 
