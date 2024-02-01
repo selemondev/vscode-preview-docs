@@ -4,7 +4,7 @@
  </h1>
 </p>
 
-This VSCode Extension enables you to preview language and framework documentations directly within your IDE ✨.
+This VSCode extension enables you to preview language and framework documentations directly within your IDE ✨.
 
 Preview Docs automatically scans your `package.json` file and generates documentation specific to each language and framework.
 
