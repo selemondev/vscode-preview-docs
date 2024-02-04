@@ -1,6 +1,6 @@
 {
   "name": "vscode-preview-docs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Preview Docs",
   "packageManager": "pnpm@8.14.1",
   "description": "Preview language and framework documentations within your IDE ✨.",
@@ -79,8 +79,8 @@
     "package": "vsce package --no-dependencies",
     "publish:release": "vsce publish --no-dependencies",
     "publish:pre": "vsce publish --pre-release --no-dependencies",
-    "release": "pnpm build && changelogen --release --push && pnpm publish:release",
-    "prerelease": "pnpm build && changelogen --prerelease --push && pnpm publish:pre",
+    "release": "pnpm build && npx changelogen --release --push && pnpm publish:release",
+    "prerelease": "pnpm build && npx changelogen --prerelease --push && pnpm publish:pre",
     "typecheck": "tsc --noEmit",
     "knip": "knip"
   },
