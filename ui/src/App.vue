@@ -1,8 +1,7 @@
 <script setup lang='ts'>
-import { watch, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import Docs from "./components/Docs.vue";
-import { getLanguageFrameworkDocs } from "../src/utils/getFrameworksDocs"
-
+import { getCommonPackages } from "./utils/getFrameworksDocs"
 type Dependency = {
   name: string,
   version: string
@@ -10,11 +9,21 @@ type Dependency = {
 interface LanguageFrameworkDoc {
   label: string;
   docUrl: string;
+  description: string
   logo: string;
 }
 
+interface FrameworkData {
+  label: string;
+  docUrl: string;
+  description: string;
+  logo: string;
+}
+
+
+const modules = ref<FrameworkData[]>([]);
+const unjsPackages = ref<FrameworkData[]>([]);
 const dependencies = ref<Dependency[]>([]);
-const dependency = ref('')
 const frameworkDocs = ref<LanguageFrameworkDoc[]>([]);
 const messageEvent = ref('')
 window.addEventListener('message', (event: any) => {
@@ -22,34 +31,51 @@ window.addEventListener('message', (event: any) => {
   messageEvent.value = message
   if (message.command === 'dependencyData') {
     dependencies.value = message.data.dependencies;
-  }
+  };
+
+  if (message.command === 'nuxtModules') {
+    modules.value = message.modules.modules;
+  };
+
+  if (message.command === 'packages') {
+    unjsPackages.value = message.packages.unjsPackages;
+  };
 });
 
-const specialDeps = new Set(['vue', 'nuxt', 'react', '@remix-run/react', 'svelte', '@sveltejs/kit']);
+const allPackages = computed(() => modules.value.concat(unjsPackages.value));
+const getLanguageFrameworkDocs = computed(() => {
+  const pkgs = allPackages.value.reduce((acc, a) => {
+    acc[a.label] = {
+      label: a.label,
+      docUrl: a.docUrl,
+      description: a.description,
+      logo: a.logo
+    };
+    return acc;
+  }, {} as Record<string, FrameworkData>);
 
+  const allPkgs = {
+    ...pkgs,
+    ...getCommonPackages
+  } as Record<string, FrameworkData>;
 
-watch(() => dependencies.value, () => {
+  return allPkgs;
+})
+
+watch(() => [dependencies, modules, unjsPackages], () => {
   let updatedFrameworkDocs: LanguageFrameworkDoc[] = [];
 
   for (const dep of dependencies.value) {
-    if (specialDeps.has(dep.name)) {
-      dependency.value = dep.name;
+    if (dep.name) {
+      const frameworkData = getLanguageFrameworkDocs.value[dep.name];
+
+      if (frameworkData) {
+        updatedFrameworkDocs.push({
+          ...frameworkData
+        });
+      }
     }
-    const packageNameLower = dep.name.toLowerCase();
 
-    // Check if the dep name starts with '@' and ends with 'nuxt' after the '/'
-    const isNuxtPackage = packageNameLower.startsWith('@') && packageNameLower.endsWith('/nuxt');
-
-    // If it's a Nuxt package, pick the dependency before '/'
-    const depKey = isNuxtPackage ? packageNameLower.split('/')[0] : packageNameLower;
-
-    const frameworkData = getLanguageFrameworkDocs[depKey];
-
-    if (frameworkData) {
-      updatedFrameworkDocs.push({
-        ...frameworkData
-      });
-    }
   }
 
   frameworkDocs.value = updatedFrameworkDocs;
@@ -60,6 +86,6 @@ watch(() => dependencies.value, () => {
 
 <template>
   <div class="flex w-full flex-col">
-    <Docs :framework-docs="frameworkDocs" :dep="dependency" />
+    <Docs :framework-docs="frameworkDocs" />
   </div>
 </template>

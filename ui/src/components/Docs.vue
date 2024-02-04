@@ -6,11 +6,11 @@ interface LanguageFrameworkDoc {
     label: string;
     docUrl: string;
     logo: string;
+    description: string
 };
 
 const props = defineProps<{
-    frameworkDocs: LanguageFrameworkDoc[],
-    dep: string
+    frameworkDocs: LanguageFrameworkDoc[]
 }>();
 
 const searchResult = ref('');
@@ -32,7 +32,7 @@ onMounted(() => {
     </div>
     <div v-if="filteredFrameworkDocs.length > 0" class="mt-2 w-full">
         <DocsCard v-for="(doc, index) in filteredFrameworkDocs" :key="index" :docUrl="doc.docUrl" :docLogo="doc.logo"
-            :docLabel="doc.label" :dep="props.dep" />
+            :docLabel="doc.label" :docDescription="doc.description" />
     </div>
 
     <div v-else class="grid place-items-center w-full mt-8">

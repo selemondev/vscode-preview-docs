@@ -4,8 +4,22 @@ import {
     getNonce,
     getUri,
     getProjectDependencies,
+    getNuxtModules,
+    getUnjsPackages
 } from '../utils';
 import { getWebviewContent } from '../utils/getWebViewContent';
+interface Modules {
+    name: string,
+    npm: string,
+    description: string,
+    icon: string
+}
+
+interface UnjsPackages {
+    title: string,
+    url: string,
+    description: string
+}
 
 // random number generated for security measure to enable Content Security Policy (CSP)
 const nonce = getNonce();
@@ -27,19 +41,19 @@ export class DocsView implements vscode.WebviewViewProvider {
 
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         this._setWebviewMessageListener(webviewView.webview);
-
-        // Call the method to initialize dependencies
-        this.getDependencies();
-
         // in case the user reloads the window while opening the extension tab
         if (webviewView.visible) {
             this.getDependencies();
+            this.getNuxtPackages();
+            this.getPackages();
         }
 
         webviewView.onDidChangeVisibility((e) => {
             if (webviewView.visible) {
                 this.getDependencies();
-            }
+                this.getNuxtPackages();
+                this.getPackages();
+            };
         });
     }
     public async getDependencies() {
@@ -50,8 +64,29 @@ export class DocsView implements vscode.WebviewViewProvider {
                 dependencies: dependencies,
             },
         });
-    }
-    public postMessage(message: { command: string, data?: { dependencies: { name: string, version: string }[] } }) {
+    };
+
+    public async getNuxtPackages() {
+        const modules = await getNuxtModules();
+        this.postMessage({
+            command: 'nuxtModules',
+            modules: {
+                modules: modules,
+            },
+        });
+    };
+
+    public async getPackages() {
+        const packages = await getUnjsPackages();
+        this.postMessage({
+            command: 'packages',
+            packages: {
+                unjsPackages: packages,
+            },
+        });
+    };
+
+    public postMessage(message: { command: string, data?: { dependencies: { name: string, version?: string, }[] }, modules?: { modules: Modules[] }, packages?: { unjsPackages: UnjsPackages[] }}) {
         if (this._view) {
             this._view.webview.postMessage(message);
         }
@@ -67,10 +102,10 @@ export class DocsView implements vscode.WebviewViewProvider {
                         text.label,
                         vscode.ViewColumn.One,
                         {
-            
+
                             // https://code.visualstudio.com/docs/extensions/webview#_scripts-and-message-passing
                             enableScripts: true,
-            
+
                             // https://code.visualstudio.com/docs/extensions/webview#_persistence
                             retainContextWhenHidden: true,
                         }
@@ -98,7 +133,7 @@ export class DocsView implements vscode.WebviewViewProvider {
             and only allow scripts that have a specific nonce.
             (See the 'webview-sample' extension sample for img-src content security policy examples)
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src https://fonts.gstatic.com/ https://fonts.googleapis.com/ https://nuxt.com https://api.iconify.design  img-src https: data: style-src 'unsafe-inline' ${webview.cspSource} script-src 'nonce-${nonce}'">
+        <meta http-equiv="Content-Security-Policy" content="default-src https://fonts.gstatic.com/ https://fonts.googleapis.com/ https://raw.githubusercontent.com/ https://api.iconify.design  img-src https: data: style-src 'unsafe-inline' ${webview.cspSource} script-src 'nonce-${nonce}'">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="${stylesUri}" rel="stylesheet">
 
