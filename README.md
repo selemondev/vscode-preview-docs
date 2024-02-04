@@ -8,17 +8,11 @@ This VSCode extension enables you to preview language and framework documentatio
 
 Preview Docs automatically scans your `package.json` file and generates documentation specific to each language and framework.
 
-## Preview Vue based framework and library documentations
+Preview Docs supports over 300+ documentation sites.
 
-![Preview Vue based framework and library documentations](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/vue.png)
+## Preview Docs
 
-## Preview React based framework and library documentations
-
-![Preview React based framework and library documentations](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/react.png)
-
-## Preview Svelte based framework and library documentations
-
-![Preview Svelte based framework and library documentations](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/svelte.png)
+![Preview Docs based framework and library documentations](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/preview-docs.png)
 
 ### How to contribute?
 
