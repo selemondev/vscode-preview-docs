@@ -42,9 +42,9 @@ window.addEventListener('message', (event: any) => {
   };
 });
 
-const allPackages = computed(() => modules.value.concat(unjsPackages.value));
+const allPackagesComputed = computed(() => modules.value.concat(unjsPackages.value));
 const getLanguageFrameworkDocs = computed(() => {
-  const pkgs = allPackages.value.reduce((acc, a) => {
+  const pkgs = allPackagesComputed.value.reduce((acc, a) => {
     acc[a.label] = {
       label: a.label,
       docUrl: a.docUrl,
@@ -54,12 +54,12 @@ const getLanguageFrameworkDocs = computed(() => {
     return acc;
   }, {} as Record<string, FrameworkData>);
 
-  const allPkgs = {
+  const allPackages = {
     ...pkgs,
     ...getCommonPackages
   } as Record<string, FrameworkData>;
 
-  return allPkgs;
+  return allPackages;
 })
 
 watch(() => [dependencies, modules, unjsPackages], () => {
