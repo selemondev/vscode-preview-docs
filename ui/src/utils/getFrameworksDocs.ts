@@ -371,5 +371,26 @@ export const getCommonPackages = {
         description: "ESLint statically analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.",
         docUrl: 'https://eslint.org/',
         logo: 'https://api.iconify.design/vscode-icons:file-type-eslint.svg'
+    },
+
+    "react-native": {
+        label: "React Native",
+        description: "Learn once, write anywhere.",
+        docUrl: "https://reactnative.dev/",
+        logo: 'https://api.iconify.design/vscode-icons:file-type-reactjs.svg'
+    },
+
+    "firebase": {
+        label: "Firebase",
+        description: "Firebase is an app development platform that helps you build and grow apps and games users love.",
+        docUrl: "https://firebase.google.com/",
+        logo: "https://api.iconify.design/vscode-icons:file-type-firebase.svg"
+    },
+
+    "vuefire":{
+        label: "Vuefire",
+        description: "Official Firebase bindings for Vue.js",
+        docUrl: "https://vuefire.vuejs.org/",
+        logo: "https://vuefire.vuejs.org/logo.svg"
     }
 };
