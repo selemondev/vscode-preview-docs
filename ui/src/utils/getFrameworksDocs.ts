@@ -380,13 +380,6 @@ export const getCommonPackages = {
         logo: 'https://api.iconify.design/vscode-icons:file-type-reactjs.svg'
     },
 
-    "firebase": {
-        label: "Firebase",
-        description: "Firebase is an app development platform that helps you build and grow apps and games users love.",
-        docUrl: "https://firebase.google.com/",
-        logo: "https://api.iconify.design/vscode-icons:file-type-firebase.svg"
-    },
-
     "vuefire":{
         label: "Vuefire",
         description: "Official Firebase bindings for Vue.js",
