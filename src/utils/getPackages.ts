@@ -21,12 +21,12 @@ export const getNuxtModules = async () => {
 export const getUnjsPackages = async () => {
     try {
         const response = await ofetch('https://unjs.io/api/content/packages.json');
-        return response.map((r: { title: string; url: string; description: string }) => {
+        return response.map((r: { title: string; url: string; description: string, logoUrl: string }) => {
             return {
                 label: r.title,
                 description: r.description,
                 docUrl: r.url,
-                logo: 'https://unjs.io/favicon.svg'
+                logo: r.logoUrl,
             };
         });
     } catch (err) {
