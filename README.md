@@ -12,7 +12,7 @@ Preview Docs supports over 300+ documentation sites.
 
 ## Preview Docs
 
-![Preview Docs based framework and library documentations](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/src/assets/images/preview-docs.png)
+![Preview Docs based framework and library documentations](https://raw.githubusercontent.com/selemondev/vscode-preview-docs/master/assets/images/preview-docs.png)
 
 ### How to contribute?
 
