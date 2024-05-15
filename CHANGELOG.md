@@ -4,6 +4,18 @@ All notable changes to the "preview-docs" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## v0.1.4
+
+[compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.3...v0.1.4)
+
+### 🏡 Chore
+
+- Move assets from src directory ([41a534c](https://github.com/selemondev/vscode-preview-docs/commit/41a534c))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.1.3
 
 [compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.2...v0.1.3)
