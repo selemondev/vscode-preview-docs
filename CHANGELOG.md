@@ -4,6 +4,10 @@ All notable changes to the "preview-docs" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## v0.1.5
+
+[compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.4...v0.1.5)
+
 ## v0.1.4
 
 [compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.3...v0.1.4)
