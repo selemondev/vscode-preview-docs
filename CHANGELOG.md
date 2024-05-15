@@ -4,6 +4,26 @@ All notable changes to the "preview-docs" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## v0.1.6
+
+[compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.5...v0.1.6)
+
+### 🩹 Fixes
+
+- Icon path ([40e7044](https://github.com/selemondev/vscode-preview-docs/commit/40e7044))
+
+### 📖 Documentation
+
+- Fix preview-image path ([3bdd9ad](https://github.com/selemondev/vscode-preview-docs/commit/3bdd9ad))
+
+### 🏡 Chore
+
+- **deps-dev:** Bump vite from 5.0.12 to 5.0.13 ([cd78d08](https://github.com/selemondev/vscode-preview-docs/commit/cd78d08))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.1.5
 
 [compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.4...v0.1.5)
