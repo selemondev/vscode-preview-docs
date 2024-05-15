@@ -42,7 +42,7 @@
   "files": [
     "dist"
   ],
-  "icon": "./src/assets/images/icon.png",
+  "icon": "./assets/images/icon.png",
   "main": "./dist/extension.js",
   "contributes": {
     "viewsContainers": {
