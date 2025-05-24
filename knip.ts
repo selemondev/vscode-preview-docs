@@ -5,10 +5,7 @@ const config: KnipConfig = {
         '.': {
             entry: 'src/index.ts',
             ignoreDependencies: ['terser'],
-            ignoreBinaries: ['vsce'],
-            tsup: {
-                config: 'tsup.config.ts'
-            },
+            ignoreBinaries: ['vsce']
         },
     },
     ignoreWorkspaces: ['ui']

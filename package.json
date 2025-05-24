@@ -37,7 +37,7 @@
     "svelte typescript react vue solid astro"
   ],
   "activationEvents": [
-    "onView:previewDocSidebar"
+    "previewDocSidebar"
   ],
   "files": [
     "dist"
@@ -73,11 +73,11 @@
   ],
   "scripts": {
     "install:all": "pnpm install && cd ui && pnpm install",
-    "build": "tsup && cd ui && pnpm build",
+    "build": "cd ui && pnpm build",
     "vscode:prepublish": "pnpm build",
     "dev": "pnpm build -- --watch",
     "lint": "eslint --cache ./src --ext .ts --fix",
-    "package": "vsce package --no-dependencies",
+    "package": "pnpm run typecheck && pnpm run lint && node esbuild.js --production",
     "publish:release": "vsce publish --no-dependencies",
     "publish:pre": "vsce publish --pre-release --no-dependencies",
     "release": "pnpm build && npx changelogen --release --push && pnpm publish:release",
@@ -90,9 +90,9 @@
     "@types/vscode": "^1.100.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
+    "esbuild": "^0.25.4",
     "eslint": "^8.57.1",
     "knip": "^4.6.0",
-    "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {

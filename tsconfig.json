@@ -6,21 +6,24 @@
 			"ES2022"
 		],
 		"esModuleInterop": true,
-        "isolatedModules": true,
-        "moduleDetection": "force",
-        "rootDir": "src",
-        "outDir": "dist",
-        "strict": true,
-        "skipLibCheck": true,
-        "resolveJsonModule": true,
-        "incremental": true,
-        "sourceMap": true
+		"isolatedModules": true,
+		"moduleDetection": "force",
+		"rootDir": "src",
+		"outDir": "dist",
+		"strict": true,
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		"incremental": true,
+		"sourceMap": true
 	},
 	"exclude": [
 		"node_modules",
 		".vscode-test",
-		"ui",
-		"tsup.config.ts",
+		"src/ui/src",
+		"src/ui/build",
+		"taze.config.ts",
+		"tsdown.config.ts",
+		"rolldown.config.js",
 		"knip.ts"
 	],
 }
