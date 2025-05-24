@@ -19,8 +19,7 @@
 	"exclude": [
 		"node_modules",
 		".vscode-test",
-		"src/ui/src",
-		"src/ui/build",
+		"ui",
 		"taze.config.ts",
 		"tsdown.config.ts",
 		"rolldown.config.js",
