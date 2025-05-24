@@ -4,6 +4,36 @@ All notable changes to the "preview-docs" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## v0.1.8
+
+[compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.5...v0.1.8)
+
+### 🚀 Enhancements
+
+- Add better-auth ([c9b8b16](https://github.com/selemondev/vscode-preview-docs/commit/c9b8b16))
+
+### 🩹 Fixes
+
+- Icon path ([40e7044](https://github.com/selemondev/vscode-preview-docs/commit/40e7044))
+
+### 📖 Documentation
+
+- Fix preview-image path ([3bdd9ad](https://github.com/selemondev/vscode-preview-docs/commit/3bdd9ad))
+
+### 🏡 Chore
+
+- **deps-dev:** Bump vite from 5.0.12 to 5.0.13 ([cd78d08](https://github.com/selemondev/vscode-preview-docs/commit/cd78d08))
+- Update dependencies ([97c980b](https://github.com/selemondev/vscode-preview-docs/commit/97c980b))
+- Create codeql.yml ([35362c1](https://github.com/selemondev/vscode-preview-docs/commit/35362c1))
+- Update configs and switch to esbuild ([f147ac1](https://github.com/selemondev/vscode-preview-docs/commit/f147ac1))
+- Add github issue templates ([2605f7a](https://github.com/selemondev/vscode-preview-docs/commit/2605f7a))
+- Configure tsconfig.json ([b3842af](https://github.com/selemondev/vscode-preview-docs/commit/b3842af))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+- Selemon Brahanu ([@selemondev](https://github.com/selemondev))
+
 ## v0.1.5
 
 [compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.4...v0.1.5)
