@@ -39,9 +39,6 @@
   "activationEvents": [
     "previewDocSidebar"
   ],
-  "files": [
-    "dist"
-  ],
   "icon": "./assets/images/icon.png",
   "main": "./dist/extension.js",
   "contributes": {
