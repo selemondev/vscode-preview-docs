@@ -1,6 +1,6 @@
 {
   "name": "vscode-preview-docs",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "displayName": "Preview Docs",
   "packageManager": "pnpm@8.15.9",
   "description": "Preview language and framework documentations within your IDE ✨.",
