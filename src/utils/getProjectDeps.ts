@@ -11,9 +11,10 @@ type Dependency = {
 export const getProjectDependencies = async (): Promise<Dependency[]> => {
     const dependencies: Dependency[] = [];
     const packageJsonPath = `${getProjectDirectory()}/package.json`;
-
-    if (!existsSync(packageJsonPath)) {
-        vscode.window.showErrorMessage('Cannot find package.json!');
+    const dir = vscode.workspace.workspaceFolders?.[0]?.uri;
+    const dirContent = dir && await vscode.workspace.fs.readDirectory(dir);
+    if (!existsSync(packageJsonPath) && dirContent?.length) {
+        vscode.window.showErrorMessage(`Cannot find package.json!`);
         return [];
     } else {
         const packageJSON = await readPackageJSON(packageJsonPath);

@@ -61,7 +61,7 @@ const getLanguageFrameworkDocs = computed(() => {
 
   return allPackages;
 })
-
+const collator = new Intl.Collator();
 watch(() => [dependencies, modules, unjsPackages], () => {
   let updatedFrameworkDocs: LanguageFrameworkDoc[] = [];
 
@@ -78,7 +78,7 @@ watch(() => [dependencies, modules, unjsPackages], () => {
 
   }
 
-  frameworkDocs.value = updatedFrameworkDocs;
+  frameworkDocs.value = updatedFrameworkDocs.sort((a, b) => collator.compare(a.label, b.label));
 }, {
   deep: true
 });
