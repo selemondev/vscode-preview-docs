@@ -385,5 +385,12 @@ export const getCommonPackages = {
         description: "Official Firebase bindings for Vue.js",
         docUrl: "https://vuefire.vuejs.org/",
         logo: "https://vuefire.vuejs.org/logo.svg"
-    }
+    },
+
+    "better-auth":{
+        label: "Better Auth",
+        description: "The most comprehensive authentication framework for TypeScript.",
+        docUrl: "https://www.better-auth.com/",
+        logo: "https://svgl.app/library/better-auth_light.svg"
+    },
 };
