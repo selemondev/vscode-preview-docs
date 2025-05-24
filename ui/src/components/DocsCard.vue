@@ -19,7 +19,7 @@ const handleOpenDocs = (label: string, logo: string, docUrl: string) => {
 </script>
 <template>
     <button @click="handleOpenDocs(props.docLabel, props.docLogo, props.docUrl)" type="button"
-        class="w-full hover:relative select-none p-3 px-0 pb-5 text-[var(--vscode-foreground)] transition-all duration-200 ease-in rounded-md">
+        class="w-full hover:relative select-none p-3 px-4 pb-5 text-[var(--vscode-foreground)] transition-all duration-200 ease-in rounded-md hover:bg-[var(--vscode-dropdown-border)]">
         <div class="w-full flex items-center space-x-3">
             <div class="h-12 grid place-items-center w-12 shrink-0">
                 <img v-if="!props.docLogo.startsWith('https://')"
