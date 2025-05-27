@@ -1,7 +1,8 @@
 import { getProjectDirectory } from "./getProjectDir";
 import * as vscode from "vscode";
-import { readPackageJSON } from "pkg-types";
-import { existsSync } from 'fs';
+import { readPackageJSONFiles } from "./readPackageJSONFiles";
+import { getAllPackageJSONFiles } from "./getAllPackageJSONFiles";
+import { existsSync } from "fs";
 
 type Dependency = {
     name: string;
@@ -9,30 +10,60 @@ type Dependency = {
 };
 
 export const getProjectDependencies = async (): Promise<Dependency[]> => {
-    const dependencies: Dependency[] = [];
+    let dependencies: Dependency[] = [];
+    
     const packageJsonPath = `${getProjectDirectory()}/package.json`;
     const dir = vscode.workspace.workspaceFolders?.[0]?.uri;
-    const dirContent = dir && await vscode.workspace.fs.readDirectory(dir);
-    if (!existsSync(packageJsonPath) && dirContent?.length) {
-        vscode.window.showErrorMessage(`Cannot find package.json!`);
+    
+    if (!dir) {
+        vscode.window.showErrorMessage(`No workspace folder found!`);
         return [];
-    } else {
-        const packageJSON = await readPackageJSON(packageJsonPath);
-
-        const addDependencies = (depObj: Record<string, string> | undefined) => {
-            if (depObj) {
-                dependencies.push(
-                    ...Object.keys(depObj).map((key) => ({
-                        name: key,
-                        version: depObj[key].replace(/[\^~]/g, ''), // Use 'g' flag to replace all occurrences
-                    }))
-                );
-            }
-        };
-
-        addDependencies(packageJSON?.dependencies);
-        addDependencies(packageJSON?.devDependencies);
-
-        return dependencies;
     }
+    
+    const packageJsonFiles = await getAllPackageJSONFiles(dir);
+    let packageJSON = [];
+
+    if (!existsSync(packageJsonPath) && packageJsonFiles.length === 0) {
+        vscode.window.showErrorMessage(`Cannot find any package.json files!`);
+        return [];
+    }
+
+    // Read all package.json files
+    if (packageJsonFiles.length > 0) {
+        for (const pkg of packageJsonFiles) {
+            try {
+                const response = await readPackageJSONFiles(pkg);
+                if (response) {
+                    packageJSON.push(response);
+                }
+            } catch (error) {
+                console.error(`Error reading package.json at ${pkg.path}:`, error);
+                vscode.window.showWarningMessage(`Failed to read package.json at ${pkg.path}`);
+            }
+        }
+    }
+
+    const addDependencies = (depObj: Record<string, string> | undefined) => {
+        if (depObj) {
+            const newDeps = Object.keys(depObj).map((key) => ({
+                name: key,
+                version: depObj[key].replace(/[\^~]/g, ''),
+            }));
+            
+            for (const newDep of newDeps) {
+                if (!dependencies.some(dep => dep.name === newDep.name)) {
+                    dependencies.push(newDep);
+                }
+            }
+        }
+    };
+
+    for (const pkg of packageJSON) {
+        if (pkg) {
+            addDependencies(pkg.dependencies);
+            addDependencies(pkg.devDependencies);
+        }
+    }
+
+    return dependencies;
 };
