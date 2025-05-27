@@ -61,7 +61,7 @@ export class DocsView implements vscode.WebviewViewProvider {
         this.postMessage({
             command: 'dependencyData',
             data: {
-                dependencies: dependencies,
+                dependencies,
             },
         });
     };
