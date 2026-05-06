@@ -45,7 +45,7 @@ jobs:
         run: pnpm test:run
 
       - name: Build the extension
-        run: pnpm run ext:build
+        run: pnpm ext:build
 
       - name: Publish to Open VSX Registry
         if: env.OVSX_PAT != ''
