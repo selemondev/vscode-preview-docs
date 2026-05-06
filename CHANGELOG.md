@@ -4,6 +4,18 @@ All notable changes to the "preview-docs" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## v0.1.17
+
+[compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.16...v0.1.17)
+
+### 🏡 Chore
+
+- Remove check-types job ([be3e56d](https://github.com/selemondev/vscode-preview-docs/commit/be3e56d))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.1.16
 
 [compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.15...v0.1.16)
