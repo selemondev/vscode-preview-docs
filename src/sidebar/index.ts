@@ -21,6 +21,12 @@ interface UnjsPackages {
     description: string
 }
 
+interface OpenDocsPayload {
+    label: string;
+    logo: string;
+    docUrl: string;
+}
+
 // random number generated for security measure to enable Content Security Policy (CSP)
 const nonce = getNonce();
 
@@ -97,6 +103,10 @@ export class DocsView implements vscode.WebviewViewProvider {
             const { command, text } = message;
             switch (command) {
                 case 'openDocs':
+                    if (!this._isOpenDocsPayload(text)) {
+                        vscode.window.showWarningMessage("Unable to open docs for the selected item.");
+                        return;
+                    }
                     const panel = vscode.window.createWebviewPanel(
                         'webDocs',
                         text.label,
@@ -111,12 +121,23 @@ export class DocsView implements vscode.WebviewViewProvider {
                         }
                     );
                     panel.webview.html = getWebviewContent(text);
-                    vscode.window.showInformationMessage(text);
+                    vscode.window.showInformationMessage(`Opened docs for ${text.label}`);
                     break;
                 default:
                     break;
             }
         });
+    }
+
+    private _isOpenDocsPayload(value: unknown): value is OpenDocsPayload {
+        if (!value || typeof value !== "object") {
+            return false;
+        }
+
+        const payload = value as Record<string, unknown>;
+        return typeof payload.label === "string"
+            && typeof payload.logo === "string"
+            && typeof payload.docUrl === "string";
     }
 
     private _getHtmlForWebview(webview: vscode.Webview) {
