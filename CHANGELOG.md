@@ -4,6 +4,26 @@ All notable changes to the "preview-docs" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## v0.1.16
+
+[compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.15...v0.1.16)
+
+### 🏡 Chore
+
+- Update pnpm version ([a427943](https://github.com/selemondev/vscode-preview-docs/commit/a427943))
+- Update assets path ([0c04617](https://github.com/selemondev/vscode-preview-docs/commit/0c04617))
+- Update ci pnpm version ([11e468b](https://github.com/selemondev/vscode-preview-docs/commit/11e468b))
+- Refresh lockfile ([205f093](https://github.com/selemondev/vscode-preview-docs/commit/205f093))
+- Update scripts ([d324de2](https://github.com/selemondev/vscode-preview-docs/commit/d324de2))
+- Update ui dependencies ([d4066cc](https://github.com/selemondev/vscode-preview-docs/commit/d4066cc))
+- Update vue-tsc and vscode engine version ([0bb3e09](https://github.com/selemondev/vscode-preview-docs/commit/0bb3e09))
+- Update pnpm to the latest version ([d507833](https://github.com/selemondev/vscode-preview-docs/commit/d507833))
+- Update email issue address ([8e90de3](https://github.com/selemondev/vscode-preview-docs/commit/8e90de3))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.1.15
 
 [compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.14...v0.1.15)
