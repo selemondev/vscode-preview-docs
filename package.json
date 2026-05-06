@@ -2,7 +2,7 @@
   "name": "vscode-preview-docs",
   "version": "0.1.15",
   "displayName": "Preview Docs",
-  "packageManager": "pnpm@8.15.9",
+  "packageManager": "pnpm@10.28.0",
   "description": "Preview language and framework documentations within your IDE ✨.",
   "publisher": "Selemondev",
   "repository": {
@@ -39,7 +39,7 @@
   "activationEvents": [
     "onView:previewDocSidebar"
   ],
-  "icon": "./assets/images/icon.png",
+  "icon": "src/assets/images/icon.png",
   "main": "./dist/extension.js",
   "contributes": {
     "viewsContainers": {
@@ -47,7 +47,7 @@
         {
           "id": "sidebar-preview-docs-view",
           "title": "Preview Docs",
-          "icon": "./assets/logo.svg"
+          "icon": "./src/assets/logo.svg"
         }
       ]
     },
@@ -57,7 +57,7 @@
           "type": "webview",
           "id": "previewDocSidebar",
           "name": "Sidebar",
-          "icon": "./assets/logo.svg",
+          "icon": "./src/assets/logo.svg",
           "contextualTitle": "Preview Docs"
         }
       ]
