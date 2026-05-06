@@ -41,7 +41,7 @@ jobs:
         run: pnpm test:run
 
       - name: Build
-        run: pnpm run ext:build
+        run: pnpm ext:build
 
       - name: Test with coverage
         run: pnpm run test:coverage

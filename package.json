@@ -69,10 +69,9 @@
     "http"
   ],
   "scripts": {
-    "install:all": "pnpm install && cd ui && pnpm install",
-    "build:ui": "cd ui && pnpm i && pnpm build",
+    "build:ui": "cd ui && pnpm build",
     "vscode:prepublish": "pnpm ext:build",
-    "ext:build": "pnpm build:ui && pnpm pkg:lib",
+    "ext:build": "pnpm i && pnpm build:ui && pnpm pkg:lib",
     "dev": "pnpm ext:build -- --watch",
     "lint": "eslint --cache ./src --ext .ts --fix",
     "pkg:lib": "pnpm run typecheck && pnpm run lint && node esbuild.js --production",
