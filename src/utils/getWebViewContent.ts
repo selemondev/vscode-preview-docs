@@ -24,7 +24,6 @@ export const getWebviewContent = (uri: URI) => {
   const safeLabel = escapeHtml(uri.label);
   const safeLogo = getSafeUrl(uri.logo);
   const safeDocUrl = getSafeUrl(uri.docUrl);
-  const safeDocUrlLabel = escapeHtml(uri.docUrl);
   const html = `
   <!DOCTYPE html>
   <html lang="en">
@@ -42,7 +41,7 @@ export const getWebviewContent = (uri: URI) => {
   </head>
   <body>
     <iframe width="100%" height="100%" src="${safeDocUrl}" frameborder="0" sandbox="allow-forms allow-popups allow-same-origin allow-scripts" referrerpolicy="no-referrer">
-      <p>Can't load ${safeDocUrlLabel}</p>
+      <p>Can't load the requested documentation preview.</p>
     </iframe>
   </body>
   </html>
