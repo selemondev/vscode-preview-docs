@@ -11,7 +11,7 @@
   },
   "bugs": {
     "url": "https://github.com/selemondev/vscode-preview-docs/issues",
-    "email": "selemonsrdev@gmail.com"
+    "email": "selemondev19@gmail.com"
   },
   "engines": {
     "vscode": "^1.115.0"
@@ -78,8 +78,8 @@
     "publish:release": "pnpm vscode && pnpm ovsx",
     "vscode": "pnpx vsce publish --no-dependencies",
     "ovsx": "pnpx ovsx publish --no-dependencies",
-    "release": "pnpm ext:build && pnpx changelogen --release --hide-author-email && git push --follow-tags && pnpm publish:release",
-    "prerelease": "pnpm ext:build && pnpx changelogen --prerelease --hide-author-email && git push --follow-tags && pnpm publish:release",
+    "release": "pnpx changelogen --release --hide-author-email && git push --follow-tags",
+    "prerelease": "pnpx changelogen --prerelease --hide-author-email && git push --follow-tags",
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
