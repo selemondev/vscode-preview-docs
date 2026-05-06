@@ -70,7 +70,7 @@
   ],
   "scripts": {
     "install:all": "pnpm install && cd ui && pnpm install",
-    "build:ui": "cd ui && pnpm build",
+    "build:ui": "cd ui && pnpm i && pnpm build",
     "vscode:prepublish": "pnpm ext:build",
     "ext:build": "pnpm build:ui && pnpm pkg:lib",
     "dev": "pnpm ext:build -- --watch",
