@@ -4,6 +4,19 @@ All notable changes to the "preview-docs" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## v0.1.15
+
+[compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.14...v0.1.15)
+
+### 🏡 Chore
+
+- **deps-dev:** Bump postcss from 8.4.33 to 8.5.10 ([695a2b5](https://github.com/selemondev/vscode-preview-docs/commit/695a2b5))
+- Add new extension build script and update workflows ([8c3f1ad](https://github.com/selemondev/vscode-preview-docs/commit/8c3f1ad))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.1.14
 
 [compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.13...v0.1.14)
