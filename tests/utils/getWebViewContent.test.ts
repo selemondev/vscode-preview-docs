@@ -29,4 +29,14 @@ describe("getWebviewContent", () => {
         expect(html).toContain('href="about:blank"');
         expect(html).toContain('src="about:blank"');
     });
+
+    it("falls back to about:blank for malformed URLs", () => {
+        const html = getWebviewContent({
+            label: "Broken docs",
+            logo: "not-a-url",
+            docUrl: "://still-broken",
+        });
+
+        expect(html.match(/about:blank/g)).toHaveLength(2);
+    });
 });

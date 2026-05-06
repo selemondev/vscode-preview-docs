@@ -71,4 +71,13 @@ describe("getPackages", () => {
 
         expect(vscode.window.showErrorMessage).toHaveBeenCalledWith("network unavailable");
     });
+
+    it("shows a user-facing error when fetching UnJS package metadata fails", async () => {
+        const { getUnjsPackages } = await import("../../src/utils/getPackages");
+        ofetch.mockRejectedValue(new Error("unjs unavailable"));
+
+        await expect(getUnjsPackages()).resolves.toBeUndefined();
+
+        expect(vscode.window.showErrorMessage).toHaveBeenCalledWith("unjs unavailable");
+    });
 });

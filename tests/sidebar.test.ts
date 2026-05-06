@@ -128,6 +128,50 @@ describe("DocsView", () => {
         expect(webview.postMessage).toHaveBeenCalledWith(message);
     });
 
+    it("publishes dependency data to the webview", async () => {
+        const { DocsView } = await import("../src/sidebar");
+        const docsView = new DocsView({ fsPath: "/extension" } as never);
+        const { webviewView, webview } = createWebviewView(false);
+        getProjectDependencies.mockResolvedValue([
+            { name: "react", version: "18.3.1" },
+        ]);
+        docsView.resolveWebviewView(webviewView as never);
+
+        await docsView.getDependencies();
+
+        expect(webview.postMessage).toHaveBeenCalledWith({
+            command: "dependencyData",
+            data: {
+                dependencies: [{ name: "react", version: "18.3.1" }],
+            },
+        });
+    });
+
+    it("publishes fetched Nuxt and UnJS package data to the webview", async () => {
+        const { DocsView } = await import("../src/sidebar");
+        const docsView = new DocsView({ fsPath: "/extension" } as never);
+        const { webviewView, webview } = createWebviewView(false);
+        getNuxtModules.mockResolvedValue([{ label: "@nuxt/content" }]);
+        getUnjsPackages.mockResolvedValue([{ label: "Nitro" }]);
+        docsView.resolveWebviewView(webviewView as never);
+
+        await docsView.getNuxtPackages();
+        await docsView.getPackages();
+
+        expect(webview.postMessage).toHaveBeenNthCalledWith(1, {
+            command: "nuxtModules",
+            modules: {
+                modules: [{ label: "@nuxt/content" }],
+            },
+        });
+        expect(webview.postMessage).toHaveBeenNthCalledWith(2, {
+            command: "packages",
+            packages: {
+                unjsPackages: [{ label: "Nitro" }],
+            },
+        });
+    });
+
     it("opens a docs panel for valid openDocs messages", async () => {
         const { DocsView } = await import("../src/sidebar");
         const docsView = new DocsView({ fsPath: "/extension" } as never);
