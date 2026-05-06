@@ -4,6 +4,31 @@ All notable changes to the "preview-docs" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## v0.1.13
+
+[compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.12...v0.1.13)
+
+### 🏡 Chore
+
+- **deps-dev:** Bump vite from 5.0.13 to 5.4.19 ([8140896](https://github.com/selemondev/vscode-preview-docs/commit/8140896))
+- **deps-dev:** Bump esbuild from 0.21.5 to 0.25.5 ([7f69c77](https://github.com/selemondev/vscode-preview-docs/commit/7f69c77))
+- Add publish workflow ([82a1fd7](https://github.com/selemondev/vscode-preview-docs/commit/82a1fd7))
+
+### ✅ Tests
+
+- Add vitest suite scaffolding ([b36454c](https://github.com/selemondev/vscode-preview-docs/commit/b36454c))
+- Harden webview and typing support ([abaa01a](https://github.com/selemondev/vscode-preview-docs/commit/abaa01a))
+- Expand vitest coverage ([66fc795](https://github.com/selemondev/vscode-preview-docs/commit/66fc795))
+- Remove redundant arg ([c426daa](https://github.com/selemondev/vscode-preview-docs/commit/c426daa))
+
+### 🤖 CI
+
+- Restrict workflow token permissions ([e7f207f](https://github.com/selemondev/vscode-preview-docs/commit/e7f207f))
+
+### ❤️ Contributors
+
+- Selemondev <selemondev19@gmail.com>
+
 ## v0.1.12
 
 [compare changes](https://github.com/selemondev/vscode-preview-docs/compare/v0.1.10...v0.1.12)
